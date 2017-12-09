@@ -7,12 +7,16 @@ import Footer from './components/footer/footer'
 class App extends Component {
   constructor() {
     super()
+
     this.state = {
-      navbar : true
+      navbar : false,
+      showNav : false,
+      collapse: true
     }
 
     this.showNavBar = this.showNavBar.bind(this)
     this.showResponsive = this.showResponsive.bind(this)
+    this.navbarClick = this.navbarClick.bind(this)
   }
 
   showNavBar () {
@@ -22,18 +26,37 @@ class App extends Component {
   }
 
   showResponsive () {
-    console.log('res')
+    if(document.body.clientWidth <= 900) {
+      this.setState({
+        navbar : true
+      })
+    }else if(document.body.clientWidth >= 900) {
+      this.setState({
+        navbar : false
+      })
+    }
+  }
+
+  navbarClick (e) {
+    this.setState({
+      collapse : !this.state.collapse
+    })
+    console.log(this.state.collapse)
+
   }
 
   componentDidMount () {
     window.onscroll = () => this.showNavBar()
-    window.addEventListener('resize', this.showResponsive)
+    window.onresize = () => this.showResponsive()
   }
 
   render() {
     return (
       <div className="App">
-        <Header/>
+        <Header 
+          navbar={this.state.navbar}
+          click={(e) => this.navbarClick(e)}
+          showBar={this.state.collapse}/>
         <Bio/>
         <Works/>
         <Footer/>
