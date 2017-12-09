@@ -6,4 +6,27 @@
   min-height: 600px;
   background-color: var(--BackgroundColor);
   border:1px solid red;
+
+  &-icons {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    border-radius: 50%;
+    background-color: grey;
+  }
+
+  &-icons:after {
+    content: "";
+    position: absolute;
+    padding:10px;
+    transition:1s
+  }
+
+  &-icons:hover:after {
+    color:white;
+    background-color: lightgrey;
+  }
+
 }

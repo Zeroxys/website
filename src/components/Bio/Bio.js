@@ -40,9 +40,10 @@ const Bio = () => {
       <div style={styles.imgContent}>
         <img src={profile} style={styles.img} alt="Miguel Zavala"/>
         <div style={styles.iconsContent}>
-          <span class="fa fa-2x fa-medium" aria-hidden="true"></span>
-          <span class="fa fa-2x fa-facebook" aria-hidden="true"></span>
-          <span class="fa fa-2x fa-twitter" aria-hidden="true"></span>
+          <span class="fa fa-2x fa-medium Bio-icons" aria-hidden="true"></span>
+          <span class="fa fa-2x fa-facebook Bio-icons" aria-hidden="true"></span>
+          <span class="fa fa-2x fa-twitter Bio-icons" aria-hidden="true"></span>
+          <span class="fa fa-2x fa-github-alt Bio-icons" aria-hidden="true"></span>
         </div>
       </div>
     </section>
