@@ -1,0 +1,45 @@
+.AppHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--BackgroundColor);
+  min-height: 150px;
+  color: grey;
+
+  &-logo {
+    border:1px solid red;
+    margin-left: 80px;
+  }
+
+  &-Nav {
+    flex:0 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid red;
+    margin-right: 80px;
+
+    &-list {
+      flex:1;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      border:1px solid red;
+
+      &-items {
+        color:grey;
+        text-decoration: none;
+        border: 1px solid blue;
+        transition:1s;
+      }
+
+      &-items:hover {
+        color:red;
+      }
+    }
+
+  }
+
+}

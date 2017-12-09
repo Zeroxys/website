@@ -1,0 +1,14 @@
+@font-face {
+  font-family: SFL;
+  src : url('../fonts/SanFranciscoDisplay-Light.otf')
+}
+
+@font-face {
+  font-family: SFB;
+  src : url('../fonts/SanFranciscoDisplay-Bold.otf')
+}
+
+@font-face {
+  font-family: SFM;
+  src : url('../fonts/SanFranciscoDisplay-Medium.otf')
+}
