@@ -1,6 +1,7 @@
-@import './fonts.css';
-@import './vars.css';
-@import './app.css';
+@import './fonts.css.postcss';
+@import './vars.css.postcss';
+@import './app.css.postcss';
+@import './bio.css.postcss';
 
 body {
   margin: 0;
