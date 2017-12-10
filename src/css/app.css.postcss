@@ -1,13 +1,24 @@
+@custom-media --tablet (max-width: 900px);
+
 .AppHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--BackgroundColor);
   min-height: 150px;
   color: grey;
 
   &-logo {
-    margin-left: 80px;
+    & h1 {
+      font-size: responsive 26px 32px;
+      transition: .5s;
+    }
+  }
+
+  &-logo:hover {
+    & h1 {
+      color: lightgrey;
+    }
   }
 
   &-Nav {
@@ -15,7 +26,52 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 80px;
+
+    @media (--tablet) {
+      flex:0 1 0;
+      justify-content: flex-end;
+    }
+
+    &-list {
+      flex:1;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+
+      &-items {
+        color:grey;
+        text-decoration: none;
+        transition:.8s;
+      }
+
+      &-items:hover {
+        color:lightgray;
+      }
+    }
+
+  }
+}
+
+.showTransition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:green;
+  position: absolute;
+  right: -30em;
+  width: 35%;
+  min-height: 100%;
+  animation: slide-in .6s forwards;
+  background-color: lightgray;
+
+&-Nav {
+    flex:0 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-list {
       flex:1;
@@ -38,4 +94,9 @@
 
   }
 
+
+}
+
+@keyframes slide-in {
+  100% { right: 0 }
 }

@@ -9,6 +9,14 @@ const Header = (props) => {
 
   let showNavbar = <span styles={style.navbar} onClick={props.click} className="fa fa-2x fa-bars" aria-hidden="true"></span>
   
+  let showTransition = (
+    <ul className="showTransition">
+      <li><a className="showTransition-Nav-list-items" href="#123">enlace 1</a></li>
+      <li><a className="showTransition-Nav-list-items" href="#123">enlace 1</a></li>
+      <li><a className="showTransition-Nav-list-items" href="#13">enlace 1</a></li>
+    </ul>
+  )
+
   let navList = (
     <ul className="AppHeader-Nav-list">
       <li><a className="AppHeader-Nav-list-items" href="#123">enlace 1</a></li>
@@ -25,7 +33,7 @@ const Header = (props) => {
 
       <nav className="AppHeader-Nav">
         {props.navbar ? showNavbar : navList }
-        {props.showBar ? <p>show console</p>: null}
+        {props.showBar ? showTransition : ''}
       </nav>
 
     </header>

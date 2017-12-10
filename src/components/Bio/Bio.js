@@ -24,7 +24,6 @@ const Bio = () => {
       justifyContent: 'space-around',
       alignItems: 'center',
       marginTop: 20,
-      border:'1px solid red'
     }
   }
 

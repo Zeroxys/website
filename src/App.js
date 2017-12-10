@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       navbar : false,
       showNav : false,
-      collapse: true
+      collapse: false
     }
 
     this.showNavBar = this.showNavBar.bind(this)

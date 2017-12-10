@@ -1,3 +1,5 @@
+@custom-media --tablet (max-width: 900px);
+
 @import './fonts.css.postcss';
 @import './vars.css.postcss';
 @import './app.css.postcss';
@@ -9,4 +11,3 @@ body {
   font-family: SFL;
   color: var(--BackgroundColor);
 }
-
