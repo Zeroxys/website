@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Header = (props) => {
-  console.log(props.showBar)
 
   const style = {
     cursor : 'pointer'
@@ -19,9 +18,9 @@ const Header = (props) => {
 
   let navList = (
     <ul className="Nav">
-      <li className="Nav-list"><a className="Nav-list-items" href="#123">About</a></li>
-      <li className="Nav-list"><a className="Nav-list-items" href="#123">Works</a></li>
-      <li className="Nav-list"><a className="Nav-list-items" href="#13">Tools</a></li>
+      <li className="Nav-list"><a onClick={(e) => props.redirectClick(e, 'asd')} className="Nav-list-items" href="#123">About</a></li>
+      <li className="Nav-list"><a onClick={props.redirectClick} className="Nav-list-items" href="#123">Works</a></li>
+      <li className="Nav-list"><a onClick={props.redirectClick} className="Nav-list-items" href="#13">Tools</a></li>
     </ul>)
 
   return (

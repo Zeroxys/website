@@ -21,6 +21,7 @@ class App extends Component {
     this.showResponsive = this.showResponsive.bind(this)
     this.navbarClick = this.navbarClick.bind(this)
     this.animationWord = this.animationWord.bind(this)
+    this.redirectClick = this.redirectClick.bind(this)
   }
 
   showNavBar () {
@@ -86,6 +87,13 @@ class App extends Component {
 
   }
 
+  redirectClick (e, id) {
+    let el = document.getElementById(id)
+    if(document.documentElement.scrollTop === 0) {
+      alert(el)
+    }
+  }
+
   componentDidMount () {
     window.onscroll = () => this.showNavBar()
     window.onresize = () => this.showResponsive()
@@ -98,7 +106,8 @@ class App extends Component {
         <Header 
           navbar={this.state.navbar}
           click={(e) => this.navbarClick(e)}
-          showBar={this.state.collapse}/>
+          showBar={this.state.collapse}
+          redirectClick = {this.redirectClick}/>
         <Bio/>
         <Works/>
         <Footer/>
