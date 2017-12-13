@@ -15,23 +15,30 @@
   }
 
   &-icons {
-    padding: 10px;
+    color:white;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     color:black;
     border-radius: 50%;
     background-color: grey;
+    transition:.6s;
   }
 
   &-icons:after {
     content: "";
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    padding:10px;
-    transition:1s
+    border-radius: 50%;
   }
 
-  &-icons:hover:after {
+  &-icons:hover {
     color:white;
     background-color: lightgrey;
   }

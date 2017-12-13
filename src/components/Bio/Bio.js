@@ -1,9 +1,18 @@
 import React from 'react'
 import profile from '../../img/perfil.jpg'
-import {StyleRoot} from 'radium'
+import {StyleRoot, keyframes} from 'radium'
 import info from './Info'
 
-const Bio = () => {
+const Bio = (props) => {
+
+  let blinkAnim = keyframes({
+    '0%' :{
+      opacity: 0
+    },
+    '50%' :{
+      opacity: 1
+    }
+  })
 
   let styles = {
     imgContent : {
@@ -36,6 +45,27 @@ const Bio = () => {
       justifyContent: 'center',
       alignItems : 'center',
       flexDirection : 'column'
+    },
+
+    word: {
+      backgroundColor: 'lightgrey',
+      height: '1.4em',
+      padding: '0 14px 0 7px',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      position: 'relative',
+
+      ':before' : {
+        content: '',
+        backgroundColor: '#4A4A4A',
+        width: '1px',
+        position: 'absolute',
+        top: '5px',
+        bottom: '5px',
+        right: '7px',
+        animation: 'blinkNaim 500ms linear infinite',
+        animationName: blinkAnim
+      }      
     }
   }
 
@@ -43,9 +73,10 @@ const Bio = () => {
     <StyleRoot>
       <section className="Bio">
         <div style={styles.bioContent}>
-          <h2 style={styles.title}>
+          <h2>Hello I'm Miguel Zavala current <span id="word" style={styles.word}></span></h2>
+          <h3 style={styles.title}>
             {info.name}
-          </h2>
+          </h3>
           <p>{info.history}</p>
           <p>{info.history2}</p>
           <p>{info.history3}</p>
@@ -56,7 +87,7 @@ const Bio = () => {
           <div style={styles.iconsContent}>
             <span className="fa fa-2x fa-medium Bio-icons" aria-hidden="true"></span>
             <span className="fa fa-2x fa-facebook Bio-icons" aria-hidden="true"></span>
-            <span class="fa fa-2x fa-linkedin Bio-icons" aria-hidden="true"></span>
+            <span className="fa fa-2x fa-linkedin Bio-icons" aria-hidden="true"></span>
             <span className="fa fa-2x fa-twitter Bio-icons" aria-hidden="true"></span>
             <span className="fa fa-2x fa-github-alt Bio-icons" aria-hidden="true"></span>
           </div>

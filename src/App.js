@@ -12,17 +12,19 @@ class App extends Component {
     this.state = {
       navbar : false,
       showNav : false,
-      collapse: false
+      collapse: false,
+      words : ['cool', 'dev', 'nerd', 'coder', 'front'],
+      addingWord : true,
     }
 
     this.showNavBar = this.showNavBar.bind(this)
     this.showResponsive = this.showResponsive.bind(this)
     this.navbarClick = this.navbarClick.bind(this)
+    this.animationWord = this.animationWord.bind(this)
   }
 
   showNavBar () {
     if(document.documentElement.scrollTop > 300) {
-      console.log('hola')
     }
   }
 
@@ -43,12 +45,51 @@ class App extends Component {
       collapse : !this.state.collapse
     })
     console.log(this.state.collapse)
+  }
+
+  animationWord() {
+
+    let wordWrapper = document.getElementById('word'),
+    wordWrapperContent = wordWrapper.innerHTML,
+    counter = 0;
+
+    setInterval( () => {
+
+      if(wordWrapperContent.length > 0 && !this.state.addingWord) {
+        wordWrapper.innerHTML = wordWrapperContent.slice(0, -1);
+        wordWrapperContent = wordWrapper.innerHTML;
+      } else {
+        this.setState({
+          addingWord : true
+        })
+      }
+
+      if(this.state.addingWord) {
+        if( wordWrapperContent.length < this.state.words[counter].length ) {
+          wordWrapper.innerHTML = this.state.words[counter].slice(0, wordWrapperContent.length + 1);
+          wordWrapperContent = wordWrapper.innerHTML;
+        } else {
+          if( counter < this.state.words.length) {
+            counter ++
+          }
+          this.setState({
+            addingWord :  false
+          })
+        }
+      }
+
+      if( counter === this.state.words.length) {
+        counter = 0;
+      }
+
+    },300)
 
   }
 
   componentDidMount () {
     window.onscroll = () => this.showNavBar()
     window.onresize = () => this.showResponsive()
+    this.animationWord()
   }
 
   render() {
