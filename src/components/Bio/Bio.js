@@ -40,11 +40,14 @@ const Bio = (props) => {
     },
 
     bioContent : {
-      padding: '0 70px 0 70px',
       display: 'flex',
       justifyContent: 'center',
       alignItems : 'center',
-      flexDirection : 'column'
+      flexDirection : 'column',
+
+      '@media (min-width: 900px)' : {
+        padding: '0 0px 0 0px'
+      }
     },
 
     word: {

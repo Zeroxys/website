@@ -11,17 +11,17 @@ const Header = (props) => {
   
   let showTransition = (
     <ul className="showTransition">
-      <li><a className="showTransition-Nav-list-items" href="#123">enlace 1</a></li>
-      <li><a className="showTransition-Nav-list-items" href="#123">enlace 1</a></li>
-      <li><a className="showTransition-Nav-list-items" href="#13">enlace 1</a></li>
+      <li className="showTransition-list"><a className="showTransition-list-items" href="#123">enlace 1</a></li>
+      <li className="showTransition-list"><a className="showTransition-list-items" href="#123">enlace 1</a></li>
+      <li className="showTransition-list"><a className="showTransition-list-items" href="#13">enlace 1</a></li>
     </ul>
   )
 
   let navList = (
-    <ul className="AppHeader-Nav-list">
-      <li><a className="AppHeader-Nav-list-items" href="#123">enlace 1</a></li>
-      <li><a className="AppHeader-Nav-list-items" href="#123">enlace 1</a></li>
-      <li><a className="AppHeader-Nav-list-items" href="#13">enlace 1</a></li>
+    <ul className="Nav">
+      <li className="Nav-list"><a className="Nav-list-items" href="#123">About</a></li>
+      <li className="Nav-list"><a className="Nav-list-items" href="#123">Works</a></li>
+      <li className="Nav-list"><a className="Nav-list-items" href="#13">Tools</a></li>
     </ul>)
 
   return (
@@ -31,7 +31,7 @@ const Header = (props) => {
         <p>Personal Blog</p>
       </div>
 
-      <nav className="AppHeader-Nav">
+      <nav className="AppHeader">
         {props.navbar ? showNavbar : navList }
         {props.showBar ? showTransition : ''}
       </nav>
