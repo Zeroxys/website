@@ -3,6 +3,7 @@ import Header from './components/header/header'
 import Bio from './components/Bio/Bio'
 import Works from './components/works/works'
 import Footer from './components/footer/footer'
+import Radium from 'radium'
 
 class App extends Component {
   constructor() {
@@ -65,4 +66,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Radium(App)

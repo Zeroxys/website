@@ -1,13 +1,18 @@
-@custom-media --tablet (max-width: 900px);
+@custom-media --tablet (max-width: 1000px);
 
 .Bio {
-  border:1px solid red;
+  padding: 0 80px 0 80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color:grey;
   min-height: 600px;
   background-color: var(--BackgroundColor);
+
+  @media (--tablet) {
+    flex-direction: column-reverse;
+    min-height: 1200px;
+  }
 
   &-icons {
     padding: 10px;
