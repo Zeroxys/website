@@ -76,7 +76,7 @@ const Bio = (props) => {
     <StyleRoot>
       <section className="Bio">
         <div style={styles.bioContent}>
-          <h2>Hello I'm Miguel Zavala current <span id="word" style={styles.word}></span></h2>
+          <h2>Hello I'm Miguel Zavala current <span id="word" style={styles.word}>{props.words[0]}</span></h2>
           <h3 style={styles.title}>
             {info.name}
           </h3>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/header/header'
 import Bio from './components/Bio/Bio'
 import Works from './components/works/works'
+import Tools from './components/tools/tools'
 import Footer from './components/footer/footer'
 import Radium from 'radium'
 
@@ -14,7 +15,8 @@ class App extends Component {
       showNav : false,
       collapse: false,
       words : ['cool', 'dev', 'nerd', 'coder', 'front'],
-      addingWord : true,
+      addingWord : false,
+      className : ''
     }
 
     this.showNavBar = this.showNavBar.bind(this)
@@ -24,11 +26,19 @@ class App extends Component {
     this.redirectClick = this.redirectClick.bind(this)
   }
 
-  showNavBar () {
-    if(document.documentElement.scrollTop > 300) {
+  showNavBar (id) {
+    if(document.documentElement.scrollTop >= 300) {
+      this.setState({
+        className : 'showScrollNav'
+      })
+    }else if (document.documentElement.scrollTop <= 300) {
+      this.setState({
+        className : ''
+      })
     }
   }
-
+ 
+  // function media query Show the navbar responsive
   showResponsive () {
     if(document.body.clientWidth <= 900) {
       this.setState({
@@ -41,6 +51,7 @@ class App extends Component {
     }
   }
 
+  // show the navbar responsive transition
   navbarClick (e) {
     this.setState({
       collapse : !this.state.collapse
@@ -48,9 +59,45 @@ class App extends Component {
     console.log(this.state.collapse)
   }
 
-  animationWord() {
 
-    let wordWrapper = document.getElementById('word'),
+  // Show the word animation
+  animationWord(id) {
+    let wordWrapper = document.getElementById(id)
+    let wordWrapperContent = wordWrapper.innerHTML
+    let counter = 0
+
+    setInterval(() => {
+
+      if(wordWrapperContent.length > 0 && !this.state.addingWord) {
+        wordWrapper.innerHTML = wordWrapperContent.slice(0, -1)
+        wordWrapperContent = wordWrapper.innerHTML
+      }else {
+        this.setState({
+          addingWord : true
+        })
+      }
+
+      if(this.state.addingWord) {
+        if(wordWrapperContent.length < this.state.words[counter].length) {
+          wordWrapper.innerHTML = this.state.words[counter].slice(0, wordWrapperContent.length +1)
+          wordWrapperContent = wordWrapper.innerHTML
+        }else {
+          if(counter < this.state.words.length) {
+            counter ++ 
+          }
+          this.setState({
+            addingWord : false
+          })
+        }
+      }
+
+      if(counter === this.state.words.length) {
+        counter = 0
+      }
+
+    }, 250)
+
+    /*let wordWrapper = document.getElementById('word'),
     wordWrapperContent = wordWrapper.innerHTML,
     counter = 0;
 
@@ -83,10 +130,12 @@ class App extends Component {
         counter = 0;
       }
 
-    },300)
+    },300)*/
 
   }
 
+
+  //Redirect to href element
   redirectClick (e, id) {
     let el = document.getElementById(id)
     if(document.documentElement.scrollTop === 0) {
@@ -95,21 +144,28 @@ class App extends Component {
   }
 
   componentDidMount () {
-    window.onscroll = () => this.showNavBar()
+    window.onscroll = () => this.showNavBar('header')
     window.onresize = () => this.showResponsive()
-    this.animationWord()
+    this.animationWord('word')
   }
 
   render() {
     return (
       <div className="App">
-        <Header 
+        <Header
+          className = {this.state.className}
           navbar={this.state.navbar}
           click={(e) => this.navbarClick(e)}
           showBar={this.state.collapse}
           redirectClick = {this.redirectClick}/>
-        <Bio/>
-        <Works/>
+
+        <Bio
+          words={this.state.words}/>
+        
+        <Works/>    
+
+        <Tools/>
+
         <Footer/>
       </div>
     );

@@ -2,11 +2,7 @@ import React from 'react'
 
 const Header = (props) => {
 
-  const style = {
-    cursor : 'pointer'
-  }
-
-  let showNavbar = <span styles={style.navbar} onClick={props.click} className="fa fa-2x fa-bars" aria-hidden="true"></span>
+  let showNavbar = <span onClick={props.click} className="fa fa-2x fa-bars" aria-hidden="true"></span>
   
   let showTransition = (
     <ul className="showTransition">
@@ -24,7 +20,7 @@ const Header = (props) => {
     </ul>)
 
   return (
-    <header className="AppHeader">
+    <header className={`AppHeader ${-props.className}`}>
       <div className="AppHeader-logo">
         <h1>miguelzavala.tech</h1>
         <p>Personal Blog</p>
