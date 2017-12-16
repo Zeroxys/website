@@ -5,7 +5,6 @@
   justify-content: space-around;
   align-items: center;
   background-color: var(--BackgroundColor);
-  min-height: 150px;
   color: grey;
 
   &-showScrollNav {
@@ -51,19 +50,29 @@
 }
 
 .showTransition {
+  border:1px solid red;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  height: 1100px;
   min-height: 100%;
   right: -30em;
   width: 35%;
-  animation: slide-in .6s forwards;
   background-color: lightgray;
 
+  &-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+  }
+
   &-list {
+    display: flex;
     padding: 0;
     list-style: none;
 
@@ -79,12 +88,4 @@
     }
 
   }
-}
-
-@keyframes slide-in {
-  100% { right: 0 }
-}
-
-@keyframes slide-out {
-  100% { right: -30em }
 }

@@ -4,7 +4,6 @@ import Bio from './components/Bio/Bio'
 import Works from './components/works/works'
 import Tools from './components/tools/tools'
 import Footer from './components/footer/footer'
-import Radium from 'radium'
 
 class App extends Component {
   constructor() {
@@ -14,19 +13,21 @@ class App extends Component {
       navbar : false,
       showNav : false,
       collapse: false,
-      words : ['cool', 'dev', 'nerd', 'coder', 'front'],
+      animation: true,
+      words : ['', 'cool', 'dev', 'nerd', 'coder', 'front'],
       addingWord : false,
-      className : ''
+      className : '',
+      width: null
     }
 
-    this.showNavBar = this.showNavBar.bind(this)
+    this.scrollNavBar = this.scrollNavBar.bind(this)
     this.showResponsive = this.showResponsive.bind(this)
     this.navbarClick = this.navbarClick.bind(this)
     this.animationWord = this.animationWord.bind(this)
     this.redirectClick = this.redirectClick.bind(this)
   }
 
-  showNavBar (id) {
+  scrollNavBar (id) {
     if(document.documentElement.scrollTop >= 300) {
       this.setState({
         className : 'showScrollNav'
@@ -40,28 +41,33 @@ class App extends Component {
  
   // function media query Show the navbar responsive
   showResponsive () {
-    if(document.body.clientWidth <= 900) {
+    let width = document.body.clientWidth
+
+    if(width > 900) {
       this.setState({
-        navbar : true
+        navbar: false
       })
-    }else if(document.body.clientWidth >= 900) {
+    }else {
       this.setState({
-        navbar : false
+        navbar: true
       })
     }
+
   }
 
   // show the navbar responsive transition
   navbarClick (e) {
-    this.setState({
-      collapse : !this.state.collapse
-    })
     console.log(this.state.collapse)
+    this.setState({
+      collapse : true,
+      animation : !this.state.animation
+    })
   }
 
 
   // Show the word animation
   animationWord(id) {
+
     let wordWrapper = document.getElementById(id)
     let wordWrapperContent = wordWrapper.innerHTML
     let counter = 0
@@ -97,41 +103,6 @@ class App extends Component {
 
     }, 250)
 
-    /*let wordWrapper = document.getElementById('word'),
-    wordWrapperContent = wordWrapper.innerHTML,
-    counter = 0;
-
-    setInterval( () => {
-
-      if(wordWrapperContent.length > 0 && !this.state.addingWord) {
-        wordWrapper.innerHTML = wordWrapperContent.slice(0, -1);
-        wordWrapperContent = wordWrapper.innerHTML;
-      } else {
-        this.setState({
-          addingWord : true
-        })
-      }
-
-      if(this.state.addingWord) {
-        if( wordWrapperContent.length < this.state.words[counter].length ) {
-          wordWrapper.innerHTML = this.state.words[counter].slice(0, wordWrapperContent.length + 1);
-          wordWrapperContent = wordWrapper.innerHTML;
-        } else {
-          if( counter < this.state.words.length) {
-            counter ++
-          }
-          this.setState({
-            addingWord :  false
-          })
-        }
-      }
-
-      if( counter === this.state.words.length) {
-        counter = 0;
-      }
-
-    },300)*/
-
   }
 
 
@@ -144,23 +115,32 @@ class App extends Component {
   }
 
   componentDidMount () {
-    window.onscroll = () => this.showNavBar('header')
+    if(document.body.clientWidth < 900) {
+      this.setState({
+        navbar : true
+      })
+    }else if(document.body.clientWidth > 900){
+      this.setState({navbar:false})
+    }
+
     window.onresize = () => this.showResponsive()
+    window.onscroll = () => this.scrollNavBar('header')
     this.animationWord('word')
   }
 
   render() {
     return (
       <div className="App">
+
         <Header
           className = {this.state.className}
           navbar={this.state.navbar}
           click={(e) => this.navbarClick(e)}
           showBar={this.state.collapse}
-          redirectClick = {this.redirectClick}/>
+          redirectClick = {this.redirectClick}
+          animation = {this.state.animation}/>
 
-        <Bio
-          words={this.state.words}/>
+        <Bio words = {this.state.words}/>
         
         <Works/>    
 
@@ -172,4 +152,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App)
+export default App
