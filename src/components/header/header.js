@@ -65,7 +65,6 @@ const Header = (props) => {
 
         <nav className="AppHeader">
           {props.navbar ? isMobile : navList }
-          {/*props.showBar ? showTransition : ''*/}
         </nav>
 
       </header>

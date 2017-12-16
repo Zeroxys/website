@@ -12,12 +12,11 @@ class App extends Component {
     this.state = {
       navbar : false,
       showNav : false,
-      collapse: false,
+      slide: false,
       animation: true,
-      words : ['', 'cool', 'dev', 'nerd', 'coder', 'front'],
+      words : ['', 'frontend', 'dev', 'nerd', 'coder', 'js lover'],
       addingWord : false,
       className : '',
-      width: null
     }
 
     this.scrollNavBar = this.scrollNavBar.bind(this)
@@ -45,7 +44,8 @@ class App extends Component {
 
     if(width > 900) {
       this.setState({
-        navbar: false
+        navbar: false,
+        animation: !this.state.animation
       })
     }else {
       this.setState({
@@ -57,9 +57,8 @@ class App extends Component {
 
   // show the navbar responsive transition
   navbarClick (e) {
-    console.log(this.state.collapse)
     this.setState({
-      collapse : true,
+      slide : true,
       animation : !this.state.animation
     })
   }
@@ -108,13 +107,15 @@ class App extends Component {
 
   //Redirect to href element
   redirectClick (e, id) {
+    
     let el = document.getElementById(id)
     if(document.documentElement.scrollTop === 0) {
       alert(el)
     }
   }
 
-  componentDidMount () {
+  componentDidMount (e) {
+
     if(document.body.clientWidth < 900) {
       this.setState({
         navbar : true
@@ -136,7 +137,7 @@ class App extends Component {
           className = {this.state.className}
           navbar={this.state.navbar}
           click={(e) => this.navbarClick(e)}
-          showBar={this.state.collapse}
+          showBar={this.state.slide}
           redirectClick = {this.redirectClick}
           animation = {this.state.animation}/>
 
