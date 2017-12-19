@@ -17,6 +17,7 @@ class App extends Component {
       words : ['', 'frontend', 'dev', 'nerd', 'coder', 'js lover'],
       addingWord : false,
       className : '',
+      tools : false
     }
 
     this.scrollNavBar = this.scrollNavBar.bind(this)
@@ -27,15 +28,21 @@ class App extends Component {
   }
 
   scrollNavBar (id) {
-    if(document.documentElement.scrollTop >= 300) {
-      this.setState({
-        className : 'showScrollNav'
-      })
-    }else if (document.documentElement.scrollTop <= 300) {
-      this.setState({
-        className : ''
-      })
-    }
+    
+    let tools = document.getElementById('tools')
+    let toolsTop = tools.offsetTop
+    let counter = 0
+    let imageSrc = [
+      'https://rishabh.io/tech/nodejs/img/nodejs.png',
+      'https://rishabh.io/tech/nodejs/img/nodejs.png',
+      'http://api.postcss.org/logo.svg',
+      'https://raw.githubusercontent.com/AvraamMavridis/lambda-react-boilerplate/master/img/react.png',
+      'https://juststickers.in/wp-content/uploads/2016/03/npm-coaster.png',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Webpack.png/429px-Webpack.png'
+    ]
+
+    console.log('asdasd')
+
   }
  
   // function media query Show the navbar responsive
@@ -125,8 +132,8 @@ class App extends Component {
     }
 
     window.onresize = () => this.showResponsive()
-    window.onscroll = () => this.scrollNavBar('header')
     this.animationWord('word')
+
   }
 
   render() {
@@ -145,8 +152,9 @@ class App extends Component {
         
         <Works/>    
 
-        <Tools/>
-
+        <Tools
+          fadeImages = {(e) => this.scrollNavBar(e)}
+          fadeImages = {this.state.fadeTools}/>
         <Footer/>
       </div>
     );
