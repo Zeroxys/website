@@ -52,14 +52,12 @@ const Footer = () => {
     <section style={styles.footerContent}>
       <div style={styles.content}>
         <p>Miguel Zavala © 2018 | Hosped on Digital Ocean</p>
-        <p>
-          <ul style={styles.social}>
-            <li key='a' style={styles.link}><a key="e" style={styles.a} href="https://www.facebook.com/profile.php?id=100014838370119">Facebook</a></li>
-            <li key='b' style={styles.link}><a key="f" style={styles.a} href="https://twitter.com/unzavala">Twitter</a></li>
-            <li key='c' style={styles.link}><a key="g" style={styles.a} href="https://github.com/zeroxys">Github</a></li>
-            <li key='d' style={styles.link}><a key="h" style={styles.a} href="https://medium.com/@Miguezav">Medium</a></li>
-          </ul>
-        </p>
+        <ul style={styles.social}>
+          <li key='a' style={styles.link}><a key="e" style={styles.a} href="https://www.facebook.com/profile.php?id=100014838370119">Facebook</a></li>
+          <li key='b' style={styles.link}><a key="f" style={styles.a} href="https://twitter.com/unzavala">Twitter</a></li>
+          <li key='c' style={styles.link}><a key="g" style={styles.a} href="https://github.com/zeroxys">Github</a></li>
+          <li key='d' style={styles.link}><a key="h" style={styles.a} href="https://medium.com/@Miguezav">Medium</a></li>
+        </ul>
       </div>
     </section>
   )

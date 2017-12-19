@@ -1,12 +1,19 @@
 import React from 'react'
-import Radium from 'radium'
-import ImageTools from './images'
+import Radium, {keyframes} from 'radium'
 
-const Tools = () => {
+const Tools = (props) => {
 
-  let styles = {
+  const fadeIn = keyframes({
+    '100%' : {opacity: 1}
+  })
+
+  const fadeOut = keyframes({
+    '100%' : {opacity: 0}
+  })
+
+  const styles = {
+
     toolsContent : {
-      border:'1px solid red',
       display: 'flex', 
       justifyContent : 'space-around',
       alignItems: 'center',
@@ -36,9 +43,11 @@ const Tools = () => {
     },
 
     img: {
-      border:'1px solid yellow',
+      opacity: props.className ? 0 : 1,
       width : 300,
-      height: 100
+      height: 100,
+      animation : `${props.className ? 'fadeIn' : 'fadeOut'} .6s ease-in 1s forwards` ,
+      animationName : props.className ? fadeIn : fadeOut
     },
 
     imgR: {
@@ -68,7 +77,7 @@ const Tools = () => {
       <div style={styles.imageContent}>
         {imageSrc.map( (el, i) => {
           return (
-              <ImageTools delay={i} style={styles.imgM} link={el} key={i}/>)
+              <img style={styles.img} src={el} key={i} alt={el}/>)
         })}
       </div>
     </div>

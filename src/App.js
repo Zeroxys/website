@@ -17,6 +17,7 @@ class App extends Component {
       words : ['', 'frontend', 'dev', 'nerd', 'coder', 'js lover'],
       addingWord : false,
       className : '',
+      fade : false,
       tools : false
     }
 
@@ -28,20 +29,21 @@ class App extends Component {
   }
 
   scrollNavBar (id) {
-    
-    let tools = document.getElementById('tools')
-    let toolsTop = tools.offsetTop
-    let counter = 0
-    let imageSrc = [
-      'https://rishabh.io/tech/nodejs/img/nodejs.png',
-      'https://rishabh.io/tech/nodejs/img/nodejs.png',
-      'http://api.postcss.org/logo.svg',
-      'https://raw.githubusercontent.com/AvraamMavridis/lambda-react-boilerplate/master/img/react.png',
-      'https://juststickers.in/wp-content/uploads/2016/03/npm-coaster.png',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Webpack.png/429px-Webpack.png'
-    ]
+    let el = document.getElementById(id)
+    let elementTop = el.offsetTop
+    let documentTop = document.documentElement.scrollTop
 
-    console.log('asdasd')
+    if (documentTop >= elementTop) {
+      this.setState({
+        fade : true
+      })
+    } else if(documentTop < elementTop){
+      this.setState({
+        fade: false
+      })
+    }
+
+    console.log(this.state.fade)
 
   }
  
@@ -121,18 +123,11 @@ class App extends Component {
     }
   }
 
-  componentDidMount (e) {
-
-    if(document.body.clientWidth < 900) {
-      this.setState({
-        navbar : true
-      })
-    }else if(document.body.clientWidth > 900){
-      this.setState({navbar:false})
-    }
-
-    window.onresize = () => this.showResponsive()
+  componentDidMount () {
     this.animationWord('word')
+    window.onresize = () => this.showResponsive()
+    
+    window.onscroll = () => this.scrollNavBar('tools')
 
   }
 
@@ -150,11 +145,10 @@ class App extends Component {
 
         <Bio words = {this.state.words}/>
         
-        <Works/>    
+        <Works
+          className={this.state.className}/>    
 
-        <Tools
-          fadeImages = {(e) => this.scrollNavBar(e)}
-          fadeImages = {this.state.fadeTools}/>
+        <Tools className={this.state.fade}/>
         <Footer/>
       </div>
     );
