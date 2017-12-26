@@ -29,7 +29,6 @@ const Tools = (props) => {
     },
 
     imageContent : {
-      border: '1px solid blue',
       display: 'flex',
       justifyContent: 'space-around',
       alignItems : 'center',
@@ -46,7 +45,7 @@ const Tools = (props) => {
       opacity: props.className ? 0 : 1,
       width : 300,
       height: 100,
-      animation : `${props.className ? 'fadeIn' : 'fadeOut'} .6s ease-in 1s forwards` ,
+      animation : `${props.className ? 'fadeIn' : 'fadeOut'} .6s ease-in .4s forwards` ,
       animationName : props.className ? fadeIn : fadeOut
     },
 
@@ -72,7 +71,7 @@ const Tools = (props) => {
   ]
 
   return (
-    <div id="tools" style={styles.toolsContent}>
+    <div style={styles.toolsContent}>
       <h2>Current Stack</h2>
       <div style={styles.imageContent}>
         {imageSrc.map( (el, i) => {

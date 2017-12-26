@@ -61,7 +61,7 @@ const Works = () => {
   return (
     <section style={styles.worksContent}>
       <h2>Works done</h2>
-      <div style={styles.works}>
+      <div id="tools" style={styles.works}>
 
         <div style={styles.card} key="a">
           <img key="ad" style={styles.img} src='https://raw.githubusercontent.com/AvraamMavridis/lambda-react-boilerplate/master/img/react.png' alt="imagen chidolira"/>
