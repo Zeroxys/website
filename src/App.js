@@ -42,9 +42,6 @@ class App extends Component {
         fade: false
       })
     }
-
-    console.log(this.state.fade)
-
   }
  
   // function media query Show the navbar responsive
@@ -116,6 +113,8 @@ class App extends Component {
 
   //Redirect to href element
   redirectClick (e, id) {
+    e.preventDefault()
+    console.log(id)
     //let el = document.getElementById(id)
     if(document.documentElement.scrollTop === 0 && id ==='asd') {
       document.documentElement.scrollTop = 160

@@ -37,9 +37,9 @@ const Header = (props) => {
   let showTransition = (
     <div style={styles.slideBar}>
       <ul className="showTransition-content">
-        <li className="showTransition-list"><a className="showTransition-list-items" href="#123">enlace 1</a></li>
-        <li className="showTransition-list"><a className="showTransition-list-items" href="#123">enlace 2</a></li>
-        <li className="showTransition-list"><a className="showTransition-list-items" href="#13">enlace 3</a></li>
+        <li className="showTransition-list"><a onClick={(e) => props.redirectClick(e, 'res')} className="showTransition-list-items" href="#">About</a></li>
+        <li className="showTransition-list"><a onClick={(e) => props.redirectClick(e, 'res1')} className="showTransition-list-items" href="#">Works</a></li>
+        <li className="showTransition-list"><a onClick={(e) => props.redirectClick(e, 'res3')} className="showTransition-list-items" href="#">Tools</a></li>
       </ul>
     </div>
   )
