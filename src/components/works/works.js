@@ -6,13 +6,13 @@ const Works = () => {
   let styles = {
     worksContent : {
       display:'flex',
-      justifyContent: 'space-around',
+      justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
       color: 'grey',
-      height : 500,
+      height : 800,
       '@media (max-width: 900px)' : {
-        height: 1200
+        height: 1400
       }
     },
 
@@ -25,18 +25,20 @@ const Works = () => {
 
       '@media (max-width: 900px)': {
         flexDirection: 'column',
-        height: 900
+        height: 1100
       }
     },
 
     card : {
       position: 'relative',
       width: '280px',
-      textAlign:'center',
+      height:'300px',
     },
 
     textOverlay: {
       display: 'flex',
+      height : 200,
+      textAlign: 'center',
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
@@ -66,7 +68,7 @@ const Works = () => {
 
   return (
     <section style={styles.worksContent}>
-      <h2>Works done</h2>
+      <h2 style={{marginBottom:100, fontSize: '2.4em'}}>Works done</h2>
       <div id="tools" style={styles.works}>
 
         <div style={styles.card} key="a">

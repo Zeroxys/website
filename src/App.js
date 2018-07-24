@@ -116,17 +116,21 @@ class App extends Component {
 
   //Redirect to href element
   redirectClick (e, id) {
-    
-    let el = document.getElementById(id)
-    if(document.documentElement.scrollTop === 0) {
-      alert(el)
+    //let el = document.getElementById(id)
+    if(document.documentElement.scrollTop === 0 && id ==='asd') {
+      document.documentElement.scrollTop = 160
+    }
+    if(document.documentElement.scrollTop === 0 && id ==='asd1') {
+      document.documentElement.scrollTop = 800
+    }
+    if(document.documentElement.scrollTop === 0 && id ==='asd2') {
+      document.documentElement.scrollTop = 1500
     }
   }
 
   componentDidMount () {
     this.animationWord('word')
     window.onresize = () => this.showResponsive()
-    
     window.onscroll = () => this.scrollNavBar('tools')
 
   }
@@ -143,12 +147,14 @@ class App extends Component {
           redirectClick = {this.redirectClick}
           animation = {this.state.animation}/>
 
-        <Bio words = {this.state.words}/>
+        <Bio 
+          words={this.state.words} />
         
         <Works
           className={this.state.className}/>    
 
-        <Tools className={this.state.fade}/>
+        <Tools 
+          className={this.state.fade}/>
         <Footer/>
       </div>
     );
