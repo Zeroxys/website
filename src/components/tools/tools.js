@@ -43,8 +43,8 @@ const Tools = (props) => {
 
     img: {
       opacity: props.className ? 0 : 1,
-      width : 300,
-      height: 100,
+      width : 200,
+      height: 200,
       animation : `${props.className ? 'fadeIn' : 'fadeOut'} .6s ease-in .4s forwards` ,
       animationName : props.className ? fadeIn : fadeOut
     },
@@ -63,11 +63,12 @@ const Tools = (props) => {
   }
 
   let imageSrc = [
-    'https://rishabh.io/tech/nodejs/img/nodejs.png',
+    'https://firebasestorage.googleapis.com/v0/b/salad-a7c82.appspot.com/o/kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84e5e7537.0464945815246930703869.png?alt=media&token=c7c84264-84df-4b32-a5c7-ccd03b796f98',
     'http://api.postcss.org/logo.svg',
-    'https://raw.githubusercontent.com/AvraamMavridis/lambda-react-boilerplate/master/img/react.png',
+    'https://gitlab.com/uploads/-/system/project/avatar/1640530/react-logo.png',
     'https://juststickers.in/wp-content/uploads/2016/03/npm-coaster.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Webpack.png/429px-Webpack.png'
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Webpack.png/429px-Webpack.png',
+    'https://www.nuno-sarmento.com/wp-content/uploads/2017/07/nginx.png'
   ]
 
   return (

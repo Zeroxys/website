@@ -27,6 +27,10 @@ const Bio = (props) => {
       width: 350,
       heigth: 350,
       borderRadius: '50%',
+      '@media (max-width: 600px)' : {
+        width: 300,
+        heigth: 300,
+      }
     },
 
     iconsContent: {
@@ -69,6 +73,10 @@ const Bio = (props) => {
         animation: 'blinkNaim 500ms linear infinite',
         animationName: blinkAnim
       }      
+    },
+
+    links : {
+      textDecoration : 'none'
     }
   }
 
@@ -88,11 +96,11 @@ const Bio = (props) => {
         <div style={styles.imgContent}>
           <img src={profile} style={styles.img} alt="Miguel Zavala"/>
           <div style={styles.iconsContent}>
-            <span className="fa fa-2x fa-medium Bio-icons" aria-hidden="true"></span>
-            <span className="fa fa-2x fa-facebook Bio-icons" aria-hidden="true"></span>
-            <span className="fa fa-2x fa-linkedin Bio-icons" aria-hidden="true"></span>
-            <span className="fa fa-2x fa-twitter Bio-icons" aria-hidden="true"></span>
-            <span className="fa fa-2x fa-github-alt Bio-icons" aria-hidden="true"></span>
+            <a href="https://medium.com/@Miguezav" style={styles.links}><span className="fa fa-2x fa-medium Bio-icons" aria-hidden="true"></span></a>
+            <a href="https://www.facebook.com/profile.php?id=100014838370119" style={styles.links}><span className="fa fa-2x fa-facebook Bio-icons" aria-hidden="true"></span></a>
+            <a href="https://www.linkedin.com/in/miguel-angel-zavala-castillo/" style={styles.links}><span className="fa fa-2x fa-linkedin Bio-icons" aria-hidden="true"></span></a>
+            <a href="https://twitter.com/unzavala" style={styles.links}><span className="fa fa-2x fa-twitter Bio-icons" aria-hidden="true"></span></a>
+            <a href="https://github.com/zeroxys" style={styles.links}><span className="fa fa-2x fa-github-alt Bio-icons" aria-hidden="true"></span></a>
           </div>
         </div>
       </section>
