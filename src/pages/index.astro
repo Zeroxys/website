@@ -2,9 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Header from "../components/Header.astro";
+import Card from "../components/Card.astro"
 ---
 
 <Layout title="Miguel Zavala">
   <Navbar navigation-slot />
   <Header />
+  <Card
+    title="Proyecto A"
+    description="Descripción del proyecto A"
+    skills={['HTML', 'CSS', 'JavaScript']}
+  />
 </Layout>
