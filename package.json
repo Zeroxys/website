@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro build --port $PORT",
+    "start": "astro preview",
     "build": "astro check && astro build --port $PORT",
     "preview": "astro preview",
     "astro": "astro"
