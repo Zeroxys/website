@@ -1,11 +1,11 @@
 {
-  "name": "Miguel Zavala Website",
+  "name": "Website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro preview",
-    "build": "astro check && astro build --port $PORT",
+    "start": "astro build --port $PORT",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
