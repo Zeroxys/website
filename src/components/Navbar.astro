@@ -1,7 +1,9 @@
 ---
+import { pdfjs } from 'react-pdf';
 import GitHub from "../components/icons/GitHub.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
 import Button from  "../components/Button.astro"
+
 ---
 
 <nav class="flex flex-col justify-around items-center sm:flex-row w-full h-28 bg-black sticky top-0 z-10">
@@ -15,10 +17,10 @@ import Button from  "../components/Button.astro"
   
     <div class="flex items-center space-x-4">
       <a href="https://github.com/Zeroxys" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">
-        <GitHub class="color-white w-8 h-8" />
+        <GitHub class="icon text-white w-8 h-8" />
       </a>
       <a href="https://www.linkedin.com/in/miguel-angel-zavala-castillo/" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer">
-        <LinkedIn class="text-white w-8 h-8" />
+        <LinkedIn class="icon text-white w-8 h-8" />
       </a>
     </div>
 
@@ -32,4 +34,13 @@ import Button from  "../components/Button.astro"
 </nav>
 
 
+<style>
+  .icon {
+    stroke: white;
+    stroke-width:1.5;
+  }
 
+  .icon:hover {
+    stroke: url(#gradient);
+  }
+</style>
