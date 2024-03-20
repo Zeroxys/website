@@ -1,6 +1,6 @@
 const experience = [
     {
-      "title": "Swift Developer, HEB, Monterrey",
+      "title": "Sismex, Monterrey",
       "description": "Desarrollo de aplicaciones iOS con Swift y UIKit.",
       "date": "Junio 2023 - Presente",
       "activities": [
@@ -14,10 +14,10 @@ const experience = [
         "Utilización de GitHub para control de versiones y colaboración en proyectos.",
         "Experiencia en despliegues a producción para lanzamiento de aplicaciones iOS."
       ],
-      "skills": ["Swift", "UIKit", "MVVM", "MVC", "API Integration", "Core Data"]
+      "skills": ["Swift", "UIKit", "MVVM", "MVC", "API Integration", "Git", "Auto Layout", "Core Animation", "Deploys AppStore", "Manejo de Schemas", "SQL"]
     },
     {
-      "title": "Senior React Developer, Datamovil, Monterrey",
+      "title": "Sismex, Datamovil, Monterrey",
       "description": "Como desarrollador en Datamovil (área digital), lideré el desarrollo de la plataforma (Dashboard) desde su concepción hasta su implementación.",
       "date": "Enero 2023 - Junio 2023",
       "activities": [
@@ -30,7 +30,7 @@ const experience = [
         "Implementación de soluciones de alojamiento y despliegue en la nube utilizando Azure.",
         "Adopción de la metodología SCRUM para una gestión eficiente de proyectos y entregas iterativas."
       ],
-      "skills": ["React", "Material UI", "REST API", "GitHub", "Azure", "SCRUM"]
+      "skills": ["React", "Material UI", "REST API", "Git", "Azure DevOps", "Metodologia Scrum", "Redux", "TypeScript", "Gatsby"]
     },
     {
       "title": "Senior Developer, ION Financiera, Mexico",
@@ -50,7 +50,7 @@ const experience = [
         "Despliegues continuos a entornos de desarrollo, prueba y producción utilizando Azure DevOps.",
         "Uso de Typescript y Redux para el manejo del estado global de la aplicación."
       ],
-      "skills": ["SCRUM", "Azure DevOps", "GitHub", "React", "Redux", "TypeScript", "GraphQL", "REST API"]
+      "skills": ["Metodologia Scrum", "Azure DevOps", "Git", "React", "Redux", "TypeScript", "GraphQL", "REST API", "Gatsby"]
     },
     {
       "title": "React Developer, Avena Health, Guadalajara",
@@ -66,7 +66,7 @@ const experience = [
         "Utilizar ANT Design para interfaces de usuario consistentes.",
         "Gestionar el control de versiones y colaborar en proyectos mediante GitHub."
       ],
-      "skills": ["React Native", "TypeScript", "Redux", "SCRUM", "REST API", "ANT Design"]
+      "skills": ["React","React Native", "TypeScript", "Redux", "Metodologia Scrum", "REST API", "ANT Design", "Firebase", "Deploys Android", "Deploys AppStore"]
     },
     {
       "title": "React Developer, Adestech, Monterrey",
@@ -81,50 +81,30 @@ const experience = [
         "Implementación de i18n (internacionalización) para ofrecer soporte a múltiples idiomas y mejorar la accesibilidad global de la aplicación.",
         "Consumo de servicios REST para la comunicación con servidores backend y la obtención de datos externos."
       ],
-      "skills": ["React", "Redux", "TypeScript", "TTS", "Hooks", "SCRUM", "REST API", "i18n"]
+      "skills": ["React", "Redux", "TypeScript", "Text to Speech", "React Hooks", "Metodologia Scrum", "REST API", "Traducciones i18n", "Deploys Android"]
     },
     {
-        "title": "React Developer, Adestech, Monterrey",
-        "description": "Como miembro del equipo de desarrollo en Adestech, mi principal proyecto fue una App tipo Personal Assistant.",
-        "date": "Febrero 2019 - Enero 2021",
-        "activities": [
-          "Implementación de TTS (Text-to-Speech) cross-platform para mejorar la accesibilidad de la aplicación.",
-          "Desarrollo e implementación de nuevos componentes utilizando Redux para la gestión del estado de la aplicación, con la integración de hooks para una gestión más eficiente del ciclo de vida y estado de los componentes funcionales.",
-          "Integración de pruebas unitarias para garantizar la calidad y estabilidad del código.",
-          "Automatización de despliegues a entornos de producción para facilitar actualizaciones rápidas y seguras.",
-          "Soporte para Android e iOS, asegurando una experiencia consistente en ambas plataformas.",
-          "Implementación de i18n (internacionalización) para ofrecer soporte a múltiples idiomas y mejorar la accesibilidad global de la aplicación.",
-          "Consumo de servicios REST para la comunicación con servidores backend y la obtención de datos externos."
-        ],
-        "skills": [
-          "React",
-          "Redux",
-          "TypeScript",
-          "TTS",
-          "Hooks",
-          "SCRUM",
-          "REST API",
-          "i18n"
-        ]
-      },
-      {
-        "title": "Software Developer, Grupo Imagen, Digital, Villahermosa",
-        "description": "Como desarrollador de Grupo Imagen (área digital), estuve involucrado en varios proyectos internos de la empresa.",
-        "date": "Febrero 2018 - Mayo 2019",
-        "activities": [
-          "Soporte y Mantenimiento CMS (Drupal).",
-          "Tracking Google Analytics.",
-          "Creación de plantillas de correo.",
-          "Implementación PWA para sitios de Marketing (React)."
-        ],
-        "skills": [
-          "CMS (Drupal)",
-          "Google Analytics",
-          "PWA",
-          "React",
-          "REST API"
-        ]
-      }
+      "title": "Software Developer, Grupo Imagen, Digital, Villahermosa",
+      "description": "Como desarrollador de Grupo Imagen (área digital), estuve involucrado en varios proyectos internos de la empresa.",
+      "date": "Febrero 2018 - Mayo 2019",
+      "activities": [
+        "Soporte y Mantenimiento CMS (Drupal).",
+        "Tracking Google Analytics.",
+        "Creación de plantillas de correo.",
+        "Implementación PWA(React)."
+      ],
+      "skills": [
+        "Drupal",
+        "Google Analytics",
+        "Firebase",
+        "Crashlytics",
+        "Javascript",
+        "Css",
+        "React",
+        "REST API",
+        "SQL"
+      ]
+    }
 ]
 
 export default experience

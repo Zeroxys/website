@@ -1,40 +1,21 @@
 ---
-import React from "react"
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Card from "../components/Card.astro"
-import { Document, Page, pdfjs } from 'react-pdf';
 import experience from "../utils/experience"
-
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
-const generatePdf = () => {
-  // Lógica para generar el contenido del PDF
-  // Puedes usar la biblioteca jsPDF o similar para generar el PDF en el cliente
-};
-
-const handleDownloadPdf = () => {
-  const pdf = generatePdf();
-  // Lógica para descargar el PDF generado
-};
----
-<!-- <Document> -->
-  <!-- <Page client:only > -->
-    
-    <Layout title="Miguel Zavala">
-      <Header />
-      {experience.map(({title, description, date, activities, skills}) => {
-        return (
-        <Card
-        title={title}
-        description={description}
-        date={date}
-        activities={activities}
-        skills={skills}
-      />
-        )
-      })}
-    </Layout>
-  <!-- </Page> -->
-<!-- </Document> -->
+---    
+<Layout title="Miguel Zavala">
+  <Header />
+  {experience.map(({title, description, date, activities, skills}) => {
+    return (
+    <Card
+    title={title}
+    description={description}
+    date={date}
+    activities={activities}
+    skills={skills}
+  />
+    )
+  })}
+</Layout>
 
