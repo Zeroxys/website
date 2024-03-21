@@ -14,10 +14,10 @@ const experience = [
         "Utilización de GitHub para control de versiones y colaboración en proyectos.",
         "Experiencia en despliegues a producción para lanzamiento de aplicaciones iOS."
       ],
-      "skills": ["Swift", "UIKit", "MVVM", "MVC", "API Integration", "Git", "Auto Layout", "Core Animation", "Deploys AppStore", "Manejo de Schemas", "SQL"]
+      "skills": ["Swift", "UIKit", "MVVM", "Viper","Segues", "Nibs", "Storyboards", "API Integration", "Git", "Auto Layout", "Core Animation", "Deploys AppStore", "Manejo de Schemas", "SQL"]
     },
     {
-      "title": "Sismex, Datamovil, Monterrey",
+      "title": "Sismex, Monterrey",
       "description": "Como desarrollador en Datamovil (área digital), lideré el desarrollo de la plataforma (Dashboard) desde su concepción hasta su implementación.",
       "date": "Enero 2023 - Junio 2023",
       "activities": [
@@ -35,7 +35,7 @@ const experience = [
     {
       "title": "Senior Developer, ION Financiera, Mexico",
       "description": "Como parte del equipo de desarrollo en ION, desempeñé un papel clave en una variedad de proyectos.",
-      "date": "Febrero 2022 - Presente",
+      "date": "Septiempre 2021 - Diciembre 2022",
       "activities": [
         "Desarrollo del Simulador Crediticio para facilitar el análisis financiero y la toma de decisiones.",
         "Creación de la Plataforma para Brokers, proporcionando herramientas eficientes para la gestión de operaciones.",
@@ -55,7 +55,7 @@ const experience = [
     {
       "title": "React Developer, Avena Health, Guadalajara",
       "description": "Como React Native Developer en Avena Health, me enfoqué en:",
-      "date": "Enero 2021 - Abril 2022",
+      "date": "Enero 2021 - Septiempre 2021",
       "activities": [
         "Implementar Pixel Perfect en las interfaces de usuario.",
         "Utilizar TypeScript junto con Redux para gestionar el estado de la aplicación de manera eficiente.",
@@ -71,7 +71,7 @@ const experience = [
     {
       "title": "React Developer, Adestech, Monterrey",
       "description": "Como miembro del equipo de desarrollo en Adestech, mi principal proyecto fue una App tipo Personal Assistant.",
-      "date": "Febrero 2019 - Enero 2021",
+      "date": "Mayo 2019 - Enero 2021",
       "activities": [
         "Implementación de TTS (Text-to-Speech) cross-platform para mejorar la accesibilidad de la aplicación.",
         "Desarrollo e implementación de nuevos componentes utilizando Redux para la gestión del estado de la aplicación, con la integración de hooks para una gestión más eficiente del ciclo de vida y estado de los componentes funcionales.",
