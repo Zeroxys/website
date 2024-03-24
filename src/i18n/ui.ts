@@ -9,7 +9,7 @@ export const languages = {
     en: {
         'nav.language': 'Language',
         'nav.home': 'Home',
-        'nav.about': 'About',
+        'nav.about': 'About me',
         'intro.title': 'Miguel Angel Zavala',
         'intro.subtitle': 'Passionate Software Developer driven by innovation and positive impact.',
         'intro.description1': 'I am a software developer with extensive experience in building innovative and scalable solutions. My passion for technology drives me to constantly seek new ways to make the world a better place. I specialize in developing web and mobile applications, using modern technologies and agile development practices to deliver high-quality products.',
