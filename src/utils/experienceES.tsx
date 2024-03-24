@@ -1,4 +1,4 @@
-const experience = [
+const es = [
     {
       "title": "Sismex, Monterrey",
       "description": "Desarrollo de aplicaciones iOS con Swift y UIKit.",
@@ -107,5 +107,5 @@ const experience = [
     }
 ]
 
-export default experience
+export default es
   

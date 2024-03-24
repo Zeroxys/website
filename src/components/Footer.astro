@@ -1,3 +1,13 @@
+---
+import GitHub from "../components/icons/GitHub.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <footer class="text-gray-500 text-center py-4 border-t border-gray-600 mt-12 w-full h-16">
-    Hecho con amor con Astro ❤️
+    {t('footer.text')}
 </footer>

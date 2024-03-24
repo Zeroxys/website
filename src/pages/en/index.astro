@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Card from "../../components/Card.astro"
+import experience from "../../utils/experienceEN"
+
+
+const tools = {
+"Methodologies" : ["Scrum"],
+"Development Environments": ["Xcode", "Android Studio", "VS Code", "Railway", "Azure"],
+"Frontend": ["React", "React-Native","Astro", "Tailwind", "Material UI", "Ant Design", "TypeScript", "Gatsby"],
+"Backend": ["Mongodb", "Supabase", "Firebase", "SQL"],
+"State Libraries": ["Recoil", "Redux", "Context", "Hooks"],
+"Form Management": ["Formik", "YUP"],
+"Additional Services and Tools": ["Push Notifications", "FCM", "Notifee", "Sentry", "REST API"]
+};
+---    
+
+
+<Layout title="Miguel Zavala">
+  <Header />
+
+  <div class="flex justify-center">
+    <div class="flex flex-col justify-center items-center w-full max-w-[600px]">
+      {experience.map(({ title, description, date, activities, skills }) => {
+        return (
+          <Card
+            title={title}
+            description={description}
+            date={date}
+            activities={activities}
+            skills={skills}
+          />
+        )
+      })}
+    </div>
+
+    {/* Sección de herramientas */}
+    <div class="flex flex-col justify-start flex-grow max-w-[600px] md:hidden">
+      {/* Oculta esta sección en dispositivos móviles */}
+    </div>
+
+    {/* Sección de herramientas visible en dispositivos no móviles */}
+    <div class="hidden md:flex flex-col justify-start flex-grow max-w-[600px]">
+      {Object.entries(tools).map(([section, items]) => (
+        <section class="bg-transparent rounded-r-lg overflow-hidden shadow-md md:w-auto md:max-w-[300px] mt-12 mx-10 custom-border">
+          <div class="p-6 md:p-8">
+            <div class="mb-4">
+              <h3 class="text-base md:text-lg lg:text-xl text-white mb-6">{section}</h3>
+              <div class="flex flex-wrap gap-2 items-start justify-start">
+                {items.map(tool => (
+                  <span class="bg-gradient-to-r from-purple-500 to-pink-400 text-white px-2 py-1 rounded text-xs md:text-sm lg:text-base">{tool}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .custom-border {
+    border-width: 2px;
+    border-image: linear-gradient(to right, #8B5CF6, #EC4899);
+    border-image-slice: 1;
+    border-radius: 30px;
+  }
+</style>
+
+
+
+
+../../utils/experienceES

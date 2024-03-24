@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <header class="md:w-1/2 sm:px-1 lg:px-1 mx-6 px-6">
   <div class="flex flex-col sm:flex-row sm:mx-auto w-full items-center">
     <img
@@ -7,7 +14,7 @@
     />
     <h1 class="text-center xl:text-left text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl mb-4 sm:mb-0 mt-6">
       <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-400">Miguel Angel Zavala</span>
-      <span class="block md:inline text-2xl text-white"> Desarrollador de software apasionado por la innovación y el impacto positivo.</span>
+      <span class="block md:inline text-2xl text-white">{t('header.subtitle')}</span>
     </h1>
   </div>
 </header>

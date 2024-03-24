@@ -1,14 +1,19 @@
 ---
 import GitHub from "../components/icons/GitHub.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
-import Button from  "./Button.astro"
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Button from "./Button.astro";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
+
 <nav class="flex flex-col justify-around items-center sm:flex-row w-full h-28 bg-black sticky top-0 z-10">
 
   <div class="flex items-center space-x-8 sm:mx-auto">
-    <a href="/" class="text-gray-300 hover:text-white font-medium text-lg">Inicio</a>
-    <a href="/about" class="text-gray-300 hover:text-white font-medium text-lg">Acerca de</a>
+    <a href="/" class="text-gray-300 hover:text-white font-medium text-lg">{t('nav.home')}</a>
+    <a href={`/${lang}/about`} class="text-gray-300 hover:text-white font-medium text-lg">{t('nav.about')}</a>
   </div>
 
   <div class="flex items-center space-x-8 sm:mx-auto">
@@ -22,11 +27,26 @@ import Button from  "./Button.astro"
       </a>
     </div>
 
+    <div class="relative" x-data="{ open: false }">
+      <button @click="open = !open" class="w-40 bg-gray-800 text-white px-4 py-2 rounded-md border border-gray-700 focus:outline-none focus:border-gray-900">
+        {t('nav.language')}
+      </button>
+      <ul x-show="open" class="absolute z-10 top-full left-0 bg-gray-800 border border-gray-700 rounded-md mt-1" @click.away="open = false">
+        {Object.entries(languages).map(([lang, label]) => (
+          <li>
+            <a href={`/${lang}/`} class="block px-4 py-2 text-white hover:bg-gray-700">{label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
     <Button>
-      Descargar CV
+      {t('nav.resume')}
     </Button>
+
   </div>
 </nav>
+
 
 
 <style>
@@ -39,4 +59,3 @@ import Button from  "./Button.astro"
     stroke: url(#gradient);
   }
 </style>
-./Button.tsx
