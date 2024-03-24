@@ -3,10 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Card from "../../components/Card.astro"
 import experience from "../../utils/experienceES"
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
 const tools = {
   "Metodologias" : ["Scrum"],
