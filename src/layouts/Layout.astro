@@ -19,7 +19,7 @@ const { title } = Astro.props;
     <title>{title} - Desarrollador Full Stack JavaScript </title>
   </head>
   <body>
-    <Navbar client:load navigation-slot />
+    <Navbar navigation-slot />
     <slot />
     <Footer/>
   </body>

@@ -7,13 +7,15 @@ import Button from "./Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const aboutPath = `/${lang}/about`
+const homePath = `/${lang}/`
 ---
 
 <nav class="flex flex-col justify-around items-center sm:flex-row w-full h-28 bg-black sticky top-0 z-10">
 
   <div class="flex items-center space-x-8 sm:mx-auto">
     <a href="/" class="text-gray-300 hover:text-white font-medium text-lg">{t('nav.home')}</a>
-    <a href={`/${lang}/about`} class="text-gray-300 hover:text-white font-medium text-lg">{t('nav.about')}</a>
+    <a href={aboutPath} class="text-gray-300 hover:text-white font-medium text-lg">{t('nav.about')}</a>
   </div>
 
   <div class="flex items-center space-x-8 sm:mx-auto">
@@ -34,7 +36,7 @@ const t = useTranslations(lang);
       <ul x-show="open" class="absolute z-10 top-full left-0 bg-gray-800 border border-gray-700 rounded-md mt-1" @click.away="open = false">
         {Object.entries(languages).map(([lang, label]) => (
           <li>
-            <a href={`/${lang}/`} class="block px-4 py-2 text-white hover:bg-gray-700">{label}</a>
+            <a href={homePath} class="block px-4 py-2 text-white hover:bg-gray-700">{label}</a>
           </li>
         ))}
       </ul>
